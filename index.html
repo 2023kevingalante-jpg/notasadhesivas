@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conversor y Anotaciones</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="whiteboard">
+
+        <!-- =========================
+             SECCIÓN 1 - CONVERSOR
+        ========================== -->
+
+        <section class="converter-section">
+
+            <div class="section-heading">
+
+                <div class="section-number teal">
+                    1
+                </div>
+
+                <div>
+                    <h1>
+                        CONVERTIR DE<br>
+                        MONEDA A PESOS
+                    </h1>
+
+                    <div class="heading-line teal-line"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Moneda -->
+
+            <div class="form-group">
+
+                <label for="currency">
+                    Moneda de origen
+                </label>
+
+                <select id="currency">
+
+                    <option value="USD">
+                        🇺🇸 USD - Dólar Estadounidense
+                    </option>
+
+                    <option value="EUR">
+                        🇪🇺 EUR - Euro
+                    </option>
+
+                    <option value="BRL">
+                        🇧🇷 BRL - Real Brasileño
+                    </option>
+
+                    <option value="UYU">
+                        🇺🇾 UYU - Peso Uruguayo
+                    </option>
+
+                    <option value="CLP">
+                        🇨🇱 CLP - Peso Chileno
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Monto -->
+
+            <div class="form-group">
+
+                <label for="amount">
+                    Monto
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="0,00"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <!-- Tipo de cambio -->
+
+            <div class="form-group">
+
+                <label for="exchangeRate">
+                    Tipo de cambio (ARS)
+                </label>
+
+                <div class="rate-container">
+
+                    <input
+                        type="number"
+                        id="exchangeRate"
+                        value="1250"
+                        min="0"
+                        step="0.01"
+                    >
+
+                    <button
+                        id="refreshRate"
+                        class="refresh-button"
+                        title="Restablecer cotización"
+                    >
+                        ↻
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Resultado -->
+
+            <div class="result-card">
+
+                <div class="result-title">
+                    Equivalente en Pesos (ARS)
+                </div>
+
+                <div
+                    id="result"
+                    class="result-value"
+                >
+                    $ 0,00
+                </div>
+
+            </div>
+
+
+            <!-- Botón convertir -->
+
+            <button
+                id="convertButton"
+                class="convert-button"
+            >
+                <span class="calculator-icon">▣</span>
+                CONVERTIR
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             SECCIÓN 2 - ANOTACIONES
+        ========================== -->
+
+        <section class="notes-section">
+
+            <div class="notes-header">
+
+                <div class="section-heading">
+
+                    <div class="section-number blue">
+                        2
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            ANOTACIONES
+                        </h2>
+
+                        <div class="heading-line blue-line"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Agregar nota -->
+
+                <button
+                    id="addNoteButton"
+                    class="add-note-button"
+                >
+
+                    <span class="plus">
+                        +
+                    </span>
+
+                    <span>
+                        AGREGAR NOTA<br>
+                        PERSONALIZADA
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- Contenedor de notas -->
+
+            <div
+                id="notesContainer"
+                class="notes-container"
+            >
+
+                <!-- NOTA 1 -->
+
+                <article class="note note-yellow">
+
+                    <div class="note-pin">
+                        📌
+                    </div>
+
+                    <div class="note-content">
+
+                        <h3>
+                            Compras del supermercado
+                        </h3>
+
+                        <p>
+                            Arroz, fideos, carnes,
+                            verduras, frutas.
+                        </p>
+
+                        <small>
+                            🗓️ 04/06/2024 - 12:30
+                        </small>
+
+                    </div>
+
+                    <div class="note-actions">
+
+                        <button class="menu-button">
+                            ⋮
+                        </button>
+
+                        <button class="delete-button">
+                            🗑
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTA 2 -->
+
+                <article class="note note-blue">
+
+                    <div class="note-pin">
+                        📌
+                    </div>
+
+                    <div class="note-content">
+
+                        <h3>
+                            Viaje a Buenos Aires
+                        </h3>
+
+                        <p>
+                            Hotel, transporte,
+                            entradas a museos.
+                        </p>
+
+                        <small>
+                            🗓️ 03/06/2024 - 18:45
+                        </small>
+
+                    </div>
+
+                    <div class="note-actions">
+
+                        <button class="menu-button">
+                            ⋮
+                        </button>
+
+                        <button class="delete-button">
+                            🗑
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTA 3 -->
+
+                <article class="note note-green">
+
+                    <div class="note-pin">
+                        📌
+                    </div>
+
+                    <div class="note-content">
+
+                        <h3>
+                            Proyecto personal
+                        </h3>
+
+                        <p>
+                            Comprar libros y
+                            materiales de estudio.
+                        </p>
+
+                        <small>
+                            🗓️ 02/06/2024 - 09:20
+                        </small>
+
+                    </div>
+
+                    <div class="note-actions">
+
+                        <button class="menu-button">
+                            ⋮
+                        </button>
+
+                        <button class="delete-button">
+                            🗑
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Estado vacío -->
+
+                <div
+                    id="emptyNotes"
+                    class="empty-notes"
+                >
+
+                    <div class="empty-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Aquí van tus anotaciones...
+                        </h3>
+
+                        <p>
+                            Escribe, dibuja, agrega ideas,
+                            lo que necesites.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BANDEJA DE MARCADORES
+        ========================== -->
+
+        <div class="marker-tray">
+
+            <div class="eraser"></div>
+
+            <div class="marker black"></div>
+
+            <div class="marker blue-marker"></div>
+
+            <div class="marker green-marker"></div>
+
+            <div class="marker red-marker"></div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL NUEVA NOTA
+    ========================== -->
+
+    <div
+        id="noteModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+            <h2>
+                Nueva anotación
+            </h2>
+
+            <input
+                id="noteTitle"
+                type="text"
+                placeholder="Título de la nota"
+            >
+
+            <textarea
+                id="noteText"
+                placeholder="Escribí tu anotación..."
+            ></textarea>
+
+            <div class="modal-buttons">
+
+                <button
+                    id="cancelNote"
+                    class="cancel-button"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    id="saveNote"
+                    class="save-button"
+                >
+                    Agregar nota
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

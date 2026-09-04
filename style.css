@@ -1,0 +1,1248 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --teal: #0ca8a0;
+    --teal-dark: #078b84;
+
+    --blue: #2879df;
+
+    --purple: #7951e8;
+
+    --green: #4faf5c;
+
+    --yellow-note: #fff8bd;
+    --blue-note: #eaf3ff;
+    --green-note: #effbe8;
+
+    --text: #24262a;
+
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(10, 168, 160, .12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(121, 81, 232, .10),
+            transparent 30%
+        ),
+
+        #edf0f2;
+
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+}
+
+
+/* =====================================
+   PIZARRA
+===================================== */
+
+.whiteboard {
+
+    position: relative;
+
+    width: min(1500px, 100%);
+
+    min-height: 900px;
+
+    display: grid;
+
+    grid-template-columns: 480px 1fr;
+
+    background: #ffffff;
+
+    border: 7px solid #747b82;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 25px 50px rgba(0,0,0,.20),
+
+        inset 0 0 0 2px #d5d9dc;
+
+}
+
+
+/* =====================================
+   CONVERSOR
+===================================== */
+
+.converter-section {
+
+    padding: 42px 34px 90px;
+
+    border-right: 2px solid #b8dedb;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fcffff,
+            #effbf9
+        );
+
+}
+
+
+/* =====================================
+   TITULOS
+===================================== */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+}
+
+
+.section-number {
+
+    width: 56px;
+
+    height: 56px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 31px;
+
+    font-weight: bold;
+
+}
+
+
+.section-number.teal {
+
+    background: var(--teal);
+
+}
+
+
+.section-number.blue {
+
+    background: var(--blue);
+
+}
+
+
+h1,
+h2 {
+
+    font-size: 30px;
+
+    line-height: 1.12;
+
+    font-weight: 700;
+
+}
+
+
+h2 {
+
+    font-size: 32px;
+
+}
+
+
+.heading-line {
+
+    height: 3px;
+
+    margin-top: 12px;
+
+    border-radius: 5px;
+
+}
+
+
+.teal-line {
+
+    width: 275px;
+
+    background: var(--teal);
+
+}
+
+
+.blue-line {
+
+    width: 205px;
+
+    background: var(--blue);
+
+}
+
+
+/* =====================================
+   FORMULARIO
+===================================== */
+
+.form-group {
+
+    margin-top: 33px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+}
+
+
+select,
+input {
+
+    width: 100%;
+
+    height: 58px;
+
+    padding: 0 17px;
+
+    border: 2px solid #c5c9cd;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #25272b;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    outline: none;
+
+    transition: .2s;
+
+}
+
+
+select:focus,
+input:focus {
+
+    border-color: var(--teal);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(12,168,160,.12);
+
+}
+
+
+/* =====================================
+   TIPO DE CAMBIO
+===================================== */
+
+.rate-container {
+
+    position: relative;
+
+}
+
+
+.rate-container input {
+
+    padding-right: 60px;
+
+}
+
+
+.refresh-button {
+
+    position: absolute;
+
+    top: 8px;
+
+    right: 9px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--teal);
+
+    font-size: 34px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.refresh-button:hover {
+
+    background: #e4f7f5;
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =====================================
+   RESULTADO
+===================================== */
+
+.result-card {
+
+    margin-top: 31px;
+
+    min-height: 135px;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: 2px solid #69c861;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fbfff0,
+            #e9fbdc
+        );
+
+}
+
+
+.result-title {
+
+    color: #239149;
+
+    font-size: 20px;
+
+}
+
+
+.result-value {
+
+    margin-top: 3px;
+
+    color: #11934d;
+
+    font-size: 43px;
+
+    font-weight: 500;
+
+}
+
+
+/* =====================================
+   BOTÓN CONVERTIR
+===================================== */
+
+.convert-button {
+
+    width: 100%;
+
+    height: 64px;
+
+    margin-top: 30px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #13b4aa,
+            #079b93
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #087a74;
+
+    transition: .15s;
+
+}
+
+
+.convert-button:hover {
+
+    filter: brightness(1.05);
+
+}
+
+
+.convert-button:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #087a74;
+
+}
+
+
+.calculator-icon {
+
+    margin-right: 10px;
+
+}
+
+
+/* =====================================
+   NOTAS
+===================================== */
+
+.notes-section {
+
+    padding: 42px 42px 90px;
+
+}
+
+
+.notes-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+}
+
+
+/* =====================================
+   BOTÓN AGREGAR
+===================================== */
+
+.add-note-button {
+
+    min-width: 250px;
+
+    min-height: 82px;
+
+    padding: 10px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8257ee,
+            #7043dc
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #5630b4;
+
+    transition: .2s;
+
+}
+
+
+.add-note-button:hover {
+
+    transform: translateY(-2px);
+
+    filter: brightness(1.05);
+
+}
+
+
+.add-note-button:active {
+
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #5630b4;
+
+}
+
+
+.plus {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--purple);
+
+    font-size: 33px;
+
+    line-height: 1;
+
+}
+
+
+/* =====================================
+   CONTENEDOR DE NOTAS
+===================================== */
+
+.notes-container {
+
+    margin-top: 24px;
+
+}
+
+
+/* =====================================
+   TARJETA NOTA
+===================================== */
+
+.note {
+
+    position: relative;
+
+    min-height: 145px;
+
+    margin-bottom: 19px;
+
+    padding: 22px 60px 20px 75px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    border-radius: 10px;
+
+    border: 1px solid;
+
+    box-shadow:
+        0 3px 6px rgba(0,0,0,.08);
+
+    transition: .2s;
+
+}
+
+
+.note:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,.10);
+
+}
+
+
+.note-yellow {
+
+    background: var(--yellow-note);
+
+    border-color: #f0cf57;
+
+    border-left: 6px solid #f3bd1d;
+
+}
+
+
+.note-blue {
+
+    background: var(--blue-note);
+
+    border-color: #8ab8f7;
+
+    border-left: 6px solid #5799ed;
+
+}
+
+
+.note-green {
+
+    background: var(--green-note);
+
+    border-color: #9ecb7e;
+
+    border-left: 6px solid #80bd5b;
+
+}
+
+
+/* =====================================
+   PIN
+===================================== */
+
+.note-pin {
+
+    position: absolute;
+
+    top: 23px;
+
+    left: 22px;
+
+    font-size: 25px;
+
+}
+
+
+/* =====================================
+   CONTENIDO
+===================================== */
+
+.note-content {
+
+    flex: 1;
+
+}
+
+
+.note-content h3 {
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.note-content p {
+
+    margin-bottom: 17px;
+
+    color: #4a4c51;
+
+    font-size: 17px;
+
+}
+
+
+.note-content small {
+
+    color: #3e4147;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================
+   ACCIONES NOTA
+===================================== */
+
+.note-actions {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 19px;
+
+    bottom: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.menu-button,
+.delete-button {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+
+.menu-button {
+
+    font-size: 27px;
+
+}
+
+
+.delete-button {
+
+    font-size: 21px;
+
+}
+
+
+.delete-button:hover {
+
+    transform: scale(1.15);
+
+}
+
+
+/* =====================================
+   ESTADO VACÍO
+===================================== */
+
+.empty-notes {
+
+    min-height: 150px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    border: 2px dashed #aa87f4;
+
+    border-radius: 12px;
+
+    color: #7650d9;
+
+}
+
+
+.empty-icon {
+
+    font-size: 60px;
+
+}
+
+
+.empty-notes h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 24px;
+
+}
+
+
+.empty-notes p {
+
+    color: #3d3f43;
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================
+   BANDEJA DE MARCADORES
+===================================== */
+
+.marker-tray {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 15%;
+
+    right: 15%;
+
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    background: #dce0e3;
+
+    border: 2px solid #8d949a;
+
+    border-bottom: none;
+
+    border-radius: 12px 12px 0 0;
+
+}
+
+
+.eraser {
+
+    width: 115px;
+
+    height: 25px;
+
+    border-radius: 5px;
+
+    background: #555d64;
+
+}
+
+
+.marker {
+
+    width: 135px;
+
+    height: 16px;
+
+    position: relative;
+
+    border: 1px solid #777;
+
+    border-radius: 10px;
+
+    background: white;
+
+}
+
+
+.marker::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+
+    top: -1px;
+
+    width: 40px;
+
+    height: 16px;
+
+    border-radius: 9px 0 0 9px;
+
+}
+
+
+.black::before {
+
+    background: #202124;
+
+}
+
+
+.blue-marker::before {
+
+    background: #2679df;
+
+}
+
+
+.green-marker::before {
+
+    background: #2ba65a;
+
+}
+
+
+.red-marker::before {
+
+    background: #e33b38;
+
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(20,25,30,.45);
+
+    z-index: 100;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+.modal-content {
+
+    position: relative;
+
+    width: min(500px, 100%);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+
+}
+
+
+.modal-content h2 {
+
+    margin-bottom: 25px;
+
+    color: #6544c5;
+
+}
+
+
+.modal-content input {
+
+    margin-bottom: 15px;
+
+}
+
+
+.modal-content textarea {
+
+    width: 100%;
+
+    min-height: 160px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    border: 2px solid #c7cbd0;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    outline: none;
+
+}
+
+
+.modal-content textarea:focus {
+
+    border-color: var(--purple);
+
+}
+
+
+.close-modal {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0f1f2;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.modal-buttons {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+}
+
+
+.cancel-button,
+.save-button {
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.cancel-button {
+
+    background: #e9ebed;
+
+}
+
+
+.save-button {
+
+    background: var(--purple);
+
+    color: white;
+
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1050px) {
+
+    .whiteboard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .converter-section {
+
+        border-right: none;
+
+        border-bottom: 2px solid #b8dedb;
+
+    }
+
+
+    .notes-section {
+
+        min-height: 700px;
+
+    }
+
+
+    .marker-tray {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+
+    .whiteboard {
+
+        border-width: 4px;
+
+    }
+
+
+    .converter-section,
+    .notes-section {
+
+        padding: 25px 18px 40px;
+
+    }
+
+
+    .notes-header {
+
+        flex-direction: column;
+
+    }
+
+
+    .add-note-button {
+
+        width: 100%;
+
+    }
+
+
+    h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .section-number {
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 24px;
+
+    }
+
+
+    .teal-line {
+
+        width: 190px;
+
+    }
+
+
+    .blue-line {
+
+        width: 170px;
+
+    }
+
+
+    .note {
+
+        padding-left: 55px;
+
+    }
+
+
+    .empty-notes {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
